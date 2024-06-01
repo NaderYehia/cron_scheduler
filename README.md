@@ -30,7 +30,7 @@ create_cron job_id --interval 30 "* * * * *" /idk/smth/script.py
 ```
 
 This command schedules a job with:
-* A unique job identifier job1
+* A unique job identifier job_id
 * A single-run interval of 30 minutes (interval expects a number which will be treated as minutes)
 * A frequency specified by the cron-like expression * * * * *
 * A script located at /idk/smth/script.py
