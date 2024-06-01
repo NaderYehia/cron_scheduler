@@ -1,0 +1,1 @@
+[{"id": "job1", "interval": "30", "frequency": "* * * * *", "script": "C:\\Users\\nader\\OneDrive\\Desktop\\test.py"}, {"id": "job2", "interval": null, "frequency": "* * * * *", "script": "C:\\Users\\nader\\OneDrive\\Desktop\\test.py"}, {"id": "job3", "interval": null, "frequency": "40 * * * 4", "script": "C:\\Users\\nader\\OneDrive\\Desktop\\test_another.py"}]
