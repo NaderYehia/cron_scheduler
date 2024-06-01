@@ -47,6 +47,9 @@ def run_task(task):
     logging.info(f"Started task {task['id']} with PID {process.pid}")
     if task['interval']:
         timeout_list.append([process, time.time() + int(task['interval']) * 60])
+    else:
+        # giving every task 30 minutes timeout by default
+        timeout_list.append([process, time.time() + 30 * 60])
 
 
 def main():
