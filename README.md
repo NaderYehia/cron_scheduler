@@ -9,29 +9,37 @@ This project implements an in-process cron scheduler in Python. The scheduler al
 ## Trade-offs
 * The current implementation runs as a foreground process. Running it as a background service or daemon would require additional setup.
 * Using JSON for persistence is simple but not suitable for highly concurrent environments or large-scale use.
-* The interval for single-run tasks expects a number representing minutes, which limits the granularity of scheduling options.
+* Currently supports only Python and shell scripts for job execution. Future improvements could include support for more scripting languages.
 
 ## Installing and Setting Up
 1. Install the Package: Ensure you are in the cron_scheduler directory and run:
-`pip install -e`
-2. Ensure the create_cron Command is Available:
-Add the Scripts directory (which will be given to you after the packages are installed) to your PATH environment variable if it's not already.
-3. Verify by running:
-`create_cron --help`
+```sh
+pip install -e
+```
+3. Ensure the create_cron Command is Available:
+Add the Scripts directory *(which will be given to you after the packages are installed)* to your PATH environment variable if it's not already.
+4. Verify by running:
+```sh
+create_cron --help
+```
 
 ## Example Usage
 ### Adding a Job
-`create_cron job_id --interval 30 "* * * * *" /idk/smth/script.py`
+```sh
+create_cron job_id --interval 30 "* * * * *" /idk/smth/script.py
+```
 
 This command schedules a job with:
-* A unique job identifier job1
+* A unique job identifier job_id
 * A single-run interval of 30 minutes (interval expects a number which will be treated as minutes)
 * A frequency specified by the cron-like expression * * * * *
 * A script located at /idk/smth/script.py
 
 ## Running the Scheduler
 To run the scheduler, execute the following command:
-`python -m cron_scheduler.scheduler`
+```sh
+python -m cron_scheduler.scheduler
+```
 This command runs the scheduler in the background.
 
 ## Log File
