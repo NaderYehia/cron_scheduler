@@ -17,7 +17,7 @@ This project implements an in-process cron scheduler in Python. The scheduler al
 pip install -e
 ```
 3. Ensure the create_cron Command is Available:
-Add the Scripts directory (which will be given to you after the packages are installed) to your PATH environment variable if it's not already.
+Add the Scripts directory *(which will be given to you after the packages are installed)* to your PATH environment variable if it's not already.
 4. Verify by running:
 ```sh
 create_cron --help
